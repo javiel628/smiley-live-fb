@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d0b">
+  <title>Live Football live matches 2026 | Watch Football Live</title>
+  <meta name="description" content="Discover available football broadcasts, explore live TV channels, and follow real football fixtures and scores with Live Football live matches 2026.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Live Football home"><span class="ball">⚽</span><span>LIVE <b>FOOTBALL</b><small>LIVE MATCHES 2026</small></span></a>
+  <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav id="nav" aria-label="Main navigation">
+    <a class="nav-link active" href="#home">Home</a><a class="nav-link" href="#matches">Live Matches</a><a class="nav-link" href="#channels">Live TV</a><a class="nav-link" href="#leagues">Leagues</a><a class="nav-link" href="#favorites">Favorites</a>
+  </nav>
+  <a class="search-shortcut" href="#channels" aria-label="Search channels">⌕ <span>Search</span></a>
+</header>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-grid"></div><div class="hero-content">
+      <div class="eyebrow"><span class="pulse"></span> FOOTBALL, WITHOUT THE NOISE</div>
+      <h1>YOUR HOME FOR<br><span>LIVE FOOTBALL</span></h1>
+      <p>Discover available football broadcasts, follow match action, and explore upcoming fixtures.</p>
+      <div class="hero-actions"><a class="btn primary" href="#channels">▶ &nbsp; Explore Channels</a><a class="btn secondary" href="#matches">View Live Matches ↗</a></div>
+      <div class="hero-note"><span>●</span> Real data only · Availability depends on providers</div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="pitch"><div class="pitch-mid"></div><div class="pitch-circle"></div><div class="pitch-box left"></div><div class="pitch-box right"></div><div class="pitch-ball">⚽</div></div></div>
+  </section>
+  <section class="stats" aria-label="Service status">
+    <div class="stat"><span class="stat-icon">▣</span><div><b id="channelCount">—</b><small>AVAILABLE CHANNELS</small></div></div>
+    <div class="stat"><span class="stat-icon green">●</span><div><b id="liveCount">—</b><small>VERIFIED LIVE MATCHES</small></div></div>
+    <div class="stat"><span class="stat-icon">◷</span><div><b id="upcomingCount">—</b><small>UPCOMING FIXTURES</small></div></div>
+    <div class="stat"><span class="stat-icon">↻</span><div><b id="lastUpdated">Not updated</b><small>LAST SUCCESSFUL UPDATE</small></div></div>
+  </section>
+  <section id="matches" class="section">
+    <div class="section-head"><div><div class="eyebrow">MATCH CENTRE</div><h2>Football <span>matches</span></h2><p>Live scores and fixtures from your configured football data provider.</p></div><button id="refreshMatches" class="btn small secondary">↻ Refresh scores</button></div>
+    <div class="tabs" role="tablist"><button class="tab active" data-match-tab="live">Live now <span id="liveTabCount">0</span></button><button class="tab" data-match-tab="upcoming">Upcoming</button><button class="tab" data-match-tab="completed">Completed</button></div>
+    <div id="matchesStatus" class="notice">Checking configured football data…</div><div id="matchesGrid" class="match-grid"></div>
+  </section>
+  <section id="channels" class="section channels-section">
+    <div class="section-head"><div><div class="eyebrow">WATCH CENTRE</div><h2>Live TV <span>channels</span></h2><p>Channels loaded from the configured primary channel service.</p></div><button id="refreshChannels" class="btn small secondary">↻ Refresh channels</button></div>
+    <div class="player-layout">
+      <div class="player-column">
+        <div class="player-frame"><video id="video" controls playsinline preload="none" aria-label="Selected channel video player"></video><div id="playerPlaceholder" class="player-placeholder"><div class="play-orb">▶</div><b>Select a channel to start watching</b><span>Only streams returned by the channel service are used.</span></div><div id="playerLoading" class="player-loading hidden"><div class="spinner"></div><span>Loading stream…</span></div></div>
+        <div class="player-meta"><div><span class="live-pill">PLAYER</span><h3 id="selectedTitle">No channel selected</h3><p id="playerMessage">Choose a channel from the list to load its available stream.</p></div><button id="retryPlayback" class="icon-btn" title="Retry playback" aria-label="Retry playback">↻</button></div>
+      </div>
+      <aside class="channel-sidebar"><div class="sidebar-head"><h3>Channel guide</h3><span id="channelGuideCount">0 channels</span></div><label class="search-box"><span>⌕</span><input id="channelSearch" type="search" placeholder="Search channels…" autocomplete="off"><button id="clearSearch" type="button" aria-label="Clear search">×</button></label><div class="filter-row"><select id="categoryFilter" aria-label="Filter channel category"><option value="all">All channels</option><option value="football">Football-related</option></select><select id="listFilter" aria-label="Filter channel list"><option value="all">All channels</option><option value="favorites">Favorites</option><option value="recent">Recently watched</option></select></div><div id="channelsStatus" class="mini-status">Loading channels…</div><div id="channelList" class="channel-list"></div></aside>
+    </div>
+  </section>
+  <section id="favorites" class="section compact-section"><div class="section-head"><div><div class="eyebrow">YOUR SHORTLIST</div><h2>Saved <span>channels</span></h2><p>Favorites are stored only in this browser.</p></div></div><div id="favoritesGrid" class="channel-cards"></div></section>
+  <section id="leagues" class="section compact-section"><div class="section-head"><div><div class="eyebrow">COMPETITIONS</div><h2>Football <span>leagues</span></h2><p>Choose a supported competition to load real fixtures. Availability depends on your configured provider and API plan.</p></div></div><div class="league-controls"><select id="leagueSelect" aria-label="Select football competition"><option value="PL">Premier League</option><option value="CL">UEFA Champions League</option><option value="PD">La Liga</option><option value="SA">Serie A</option><option value="BL1">Bundesliga</option><option value="FL1">Ligue 1</option></select><button id="loadLeague" class="btn primary small">Load fixtures</button></div><div id="leagueStatus" class="notice">Configure FOOTBALL_DATA_API_KEY in the server environment to enable league fixtures.</div><div id="leagueGrid" class="match-grid"></div></section>
+</main>
+<footer><div class="footer-brand"><span class="ball">⚽</span><b>LIVE FOOTBALL LIVE MATCHES 2026</b></div><p>Developed by <strong>𝐒𝚳𝚰𝐋𝚵 𝚳𝚯𝐃𝚵</strong></p><p>© 2026 𝐒𝚳𝚰𝐋𝚵 𝚳𝚯𝐃𝚵. All rights reserved.</p><small>Stream availability and match information depend on the configured service providers. Only watch broadcasts you are authorized to access.</small></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
